@@ -66,3 +66,37 @@ const images = [
       },
     ];
     
+    const gallery = document.querySelector(".gallery");
+    const list = images.map( item => 
+          `<li class="gallery-item">
+        <a class="gallery-link" href="${item.original}">
+          <img
+            class="gallery-image"
+            src="${item.preview}"
+            data-source="${item.original}"
+            alt="${item.description}"
+          />
+        </a>
+      </li>`
+    ).join("");
+
+gallery.innerHTML = list;
+gallery.addEventListener("click", handleclick);
+
+function handleclick (event) {
+event.preventDefault();
+if(event.target === event.currentTarget) {
+    return;
+}
+console.log(event.target.dataset.source);
+// console.log(event.target.closest(".gallery-item"));
+
+const findpicture = images.find( item => event.target.alt === item.description)
+console.log(findpicture);
+
+const instance = basicLightbox.create(
+    `<img src=${findpicture.original} width="800" height="600">
+`)
+instance.show()
+};
+

@@ -10,3 +10,24 @@ img {
   display: block;
 }
 
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.gallery-item {
+ }
+
+.gallery-link {
+
+}
+
+.gallery-image {
+  width: 360px;
+  border: 2px solid black;
+  }
+
+.gallery-image:hover {
+  border: 2px solid blue;
+}
