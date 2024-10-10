@@ -91,11 +91,9 @@ if(event.target === event.currentTarget) {
 console.log(event.target.dataset.source);
 // console.log(event.target.closest(".gallery-item"));
 
-const findpicture = images.find( item => event.target.alt === item.description)
-console.log(findpicture);
 
 const instance = basicLightbox.create(
-    `<img src=${findpicture.original} width="800" height="600">
+    `<img src=${event.target.dataset.source} width="800" height="600">
 `)
 instance.show()
 };
