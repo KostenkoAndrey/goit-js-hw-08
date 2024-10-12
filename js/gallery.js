@@ -85,7 +85,7 @@ gallery.addEventListener("click", handleclick);
 
 function handleclick (event) {
 event.preventDefault();
-if(event.target === event.currentTarget) {
+if(event.target.nodeName === "UL") {
     return;
 }
 console.log(event.target.dataset.source);
